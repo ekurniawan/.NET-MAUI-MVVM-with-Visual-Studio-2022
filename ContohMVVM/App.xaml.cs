@@ -1,4 +1,6 @@
-﻿namespace ContohMVVM;
+﻿using ContohMVVM.Views;
+
+namespace ContohMVVM;
 
 public partial class App : Application
 {
@@ -6,7 +8,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new CustomerView();
 	}
 }
 
