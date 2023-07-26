@@ -8,7 +8,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new CustomersView();
+		MainPage = new CommandView();
 	}
 }
 
