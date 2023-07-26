@@ -5,6 +5,8 @@ namespace ContohMVVM.ViewModels
 {
 	public class CustomerViewModel
 	{
+        
+
 		public Customer Customer { get; set; }
 		public CustomerViewModel()
 		{
@@ -21,6 +23,9 @@ namespace ContohMVVM.ViewModels
                 Balance = 123.45,
                 ActiveCustomer = true
             };
+
+            
+
 
         }
     }
