@@ -12,13 +12,16 @@ namespace ContohMVVM.ViewModels
 	{
         private readonly MonkeyService monkeyService;
         private readonly IConnectivity connectivity;
+        private readonly IGeolocation geolocation;
 
         public ObservableCollection<Monkey> Monkeys { get; } = new();
-        public MonkeysViewModel(MonkeyService monkeyService,IConnectivity connectivity)
+        public MonkeysViewModel(MonkeyService monkeyService,IConnectivity connectivity,
+			IGeolocation geolocation)
 		{
 			Title = "Monkey Finder";
 			this.monkeyService = monkeyService;
 			this.connectivity = connectivity;
+			this.geolocation = geolocation;
 		}
 
 		[RelayCommand]
@@ -31,6 +34,34 @@ namespace ContohMVVM.ViewModels
 				{
 					{"Monkey",monkey }
 				});
+		}
+
+		[RelayCommand]
+		async Task GetClosestMonkeyAsync()
+		{
+			if (IsBusy || Monkeys.Count == 0)
+				return;
+			try
+			{
+				var location = await geolocation.GetLastKnownLocationAsync();
+				if(location==null)
+				{
+					location = await geolocation.GetLocationAsync(
+                    new GeolocationRequest
+                    {
+                        DesiredAccuracy = GeolocationAccuracy.Medium,
+                        Timeout = TimeSpan.FromSeconds(30)
+                    });
+                }
+				var first = Monkeys.OrderBy(m => location.CalculateDistance(new Location(m.Latitude,m.Longitude),
+					DistanceUnits.Miles)).FirstOrDefault();
+				await Shell.Current.DisplayAlert("", first.Name + " " + first.Location, "OK");
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Message);
+				await Shell.Current.DisplayAlert("Error", $"Tidak bisa dapat info lokasi {ex.Message}", "OK");
+			}
 		}
 
 		[RelayCommand]
