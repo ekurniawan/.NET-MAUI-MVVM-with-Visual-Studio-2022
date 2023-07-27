@@ -53,16 +53,27 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Views\" />
 	  <None Remove="ViewModels\" />
 	  <None Remove="Models\" />
+	  <None Remove="Resources\Images\question.png" />
+	  <None Remove="Resources\Images\comet.png" />
+	  <None Remove="Resources\Images\sun.png" />
+	  <None Remove="Resources\Images\starfield.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Models\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\question.png" />
+	  <BundleResource Include="Resources\Images\comet.png" />
+	  <BundleResource Include="Resources\Images\sun.png" />
+	  <BundleResource Include="Resources\Images\starfield.png" />
 	</ItemGroup>
 </Project>
