@@ -6,37 +6,20 @@
     xmlns:view="clr-namespace:ContohMVVM.Views"
      FlyoutIcon="moon.png">
 
-    <Shell.FlyoutHeader>
-        <Grid HeightRequest="100" BackgroundColor="DarkSlateBlue">
-            <Image Source="moon.png"/>
-        </Grid>
-    </Shell.FlyoutHeader>
+    
 
-    <FlyoutItem Title="Calc App" Icon="moon.png">
-        <ShellContent
-        ContentTemplate="{DataTemplate view:CalcView}" />
+    <FlyoutItem Title="Master Vendor" Icon="moon.png">
+        <ShellContent Title="Calc App" Icon="moon.png"
+                      ContentTemplate="{DataTemplate view:CalcView}" />
+         <ShellContent Title="Command" Icon="sun.png"
+                      ContentTemplate="{DataTemplate view:CommandView}" />
     </FlyoutItem>
 
-     <FlyoutItem Title="Command App" Icon="sun.png">
-        <ShellContent
-        ContentTemplate="{DataTemplate view:CommandView}" />
+    <FlyoutItem Title="Customer" Icon="question.png">
+        <ShellContent Title="Customer"
+                      ContentTemplate="{DataTemplate view:CustomerView}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Customer View" Icon="moon.png">
-        <ShellContent ContentTemplate="{DataTemplate view:CustomerView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="List Of Customers" Icon="starfield.png">
-        <ShellContent ContentTemplate="{DataTemplate view:CustomersView}" />
-    </FlyoutItem>
-
-    <TabBar>
-        <Tab Title="Calc App" Icon="moon.png">
-            <ShellContent ContentTemplate="{DataTemplate view:CalcView}" />
-        </Tab>
-        <Tab Title="Command App" Icon="sun.png">
-            <ShellContent ContentTemplate="{DataTemplate view:CommandView}" />
-        </Tab>
-    </TabBar>
 
 </Shell>
 
