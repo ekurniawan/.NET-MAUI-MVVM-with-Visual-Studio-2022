@@ -12,16 +12,31 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Calc App">
+    <FlyoutItem Title="Calc App" Icon="moon.png">
         <ShellContent
         ContentTemplate="{DataTemplate view:CalcView}" />
     </FlyoutItem>
 
-     <FlyoutItem Title="Command App">
+     <FlyoutItem Title="Command App" Icon="sun.png">
         <ShellContent
         ContentTemplate="{DataTemplate view:CommandView}" />
     </FlyoutItem>
-   
+
+    <FlyoutItem Title="Customer View" Icon="moon.png">
+        <ShellContent ContentTemplate="{DataTemplate view:CustomerView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="List Of Customers" Icon="starfield.png">
+        <ShellContent ContentTemplate="{DataTemplate view:CustomersView}" />
+    </FlyoutItem>
+
+    <TabBar>
+        <Tab Title="Calc App" Icon="moon.png">
+            <ShellContent ContentTemplate="{DataTemplate view:CalcView}" />
+        </Tab>
+        <Tab Title="Command App" Icon="sun.png">
+            <ShellContent ContentTemplate="{DataTemplate view:CommandView}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
 
