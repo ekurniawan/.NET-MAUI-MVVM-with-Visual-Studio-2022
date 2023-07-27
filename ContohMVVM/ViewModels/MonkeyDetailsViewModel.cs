@@ -4,6 +4,7 @@ using ContohMVVM.Models;
 
 namespace ContohMVVM.ViewModels
 {
+	[QueryProperty(nameof(Monkey), "Monkey")]
 	public partial class MonkeyDetailsViewModel : BaseViewModel
 	{
 		public MonkeyDetailsViewModel()

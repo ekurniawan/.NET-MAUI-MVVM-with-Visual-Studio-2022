@@ -26,6 +26,9 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MonkeysViewModel>();
 		builder.Services.AddSingleton<MonkeysView>();
 
+		builder.Services.AddSingleton<MonkeyDetailsViewModel>();
+		builder.Services.AddSingleton<DetailsView>();
+
 		return builder.Build();
 	}
 }

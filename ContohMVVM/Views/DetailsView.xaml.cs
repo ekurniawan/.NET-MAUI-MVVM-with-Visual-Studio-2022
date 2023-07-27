@@ -1,9 +1,12 @@
-﻿namespace ContohMVVM.Views;
+﻿using ContohMVVM.ViewModels;
+
+namespace ContohMVVM.Views;
 
 public partial class DetailsView : ContentPage
 {
-	public DetailsView()
+	public DetailsView(MonkeyDetailsViewModel viewModel)
 	{
 		InitializeComponent();
+		BindingContext = viewModel;
 	}
 }

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using CommunityToolkit.Mvvm.Input;
 using ContohMVVM.Models;
 using ContohMVVM.Services;
+using ContohMVVM.Views;
 
 namespace ContohMVVM.ViewModels
 {
@@ -15,6 +16,18 @@ namespace ContohMVVM.ViewModels
 		{
 			Title = "Monkey Finder";
 			this.monkeyService = monkeyService;
+		}
+
+		[RelayCommand]
+		async Task GoToDetails(Monkey monkey)
+		{
+			if (monkey == null)
+				return;
+			await Shell.Current.GoToAsync(nameof(DetailsView), true,
+				new Dictionary<string, object>
+				{
+					{"Monkey",monkey }
+				});
 		}
 
 		[RelayCommand]
