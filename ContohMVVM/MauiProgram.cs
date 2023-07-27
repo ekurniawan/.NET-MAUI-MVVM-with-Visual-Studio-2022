@@ -32,6 +32,7 @@ public static class MauiProgram
 		//platform API
 		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 		builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
+		builder.Services.AddSingleton<IMap>(Map.Default);
 		return builder.Build();
 	}
 }
