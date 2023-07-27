@@ -29,6 +29,9 @@ public static class MauiProgram
 		builder.Services.AddSingleton<MonkeyDetailsViewModel>();
 		builder.Services.AddSingleton<DetailsView>();
 
+		//platform API
+		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+
 		return builder.Build();
 	}
 }

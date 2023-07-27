@@ -11,11 +11,14 @@ namespace ContohMVVM.ViewModels
 	public partial class MonkeysViewModel : BaseViewModel
 	{
         private readonly MonkeyService monkeyService;
-		public ObservableCollection<Monkey> Monkeys { get; } = new();
-        public MonkeysViewModel(MonkeyService monkeyService)
+        private readonly IConnectivity connectivity;
+
+        public ObservableCollection<Monkey> Monkeys { get; } = new();
+        public MonkeysViewModel(MonkeyService monkeyService,IConnectivity connectivity)
 		{
 			Title = "Monkey Finder";
 			this.monkeyService = monkeyService;
+			this.connectivity = connectivity;
 		}
 
 		[RelayCommand]
@@ -38,6 +41,12 @@ namespace ContohMVVM.ViewModels
 
 			try
 			{
+				if(connectivity.NetworkAccess != NetworkAccess.Internet)
+				{
+					await Shell.Current.DisplayAlert("Masalah pada koneksi internet !", "Cek koneksi anda", "OK");
+					return;
+				}
+
 				IsBusy = true;
 				var monkeys = await monkeyService.GetMonkeys();
 				if (Monkeys.Count != 0)
