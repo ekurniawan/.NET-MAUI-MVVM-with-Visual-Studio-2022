@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using ContohMVVM.Services;
+using ContohMVVM.ViewModels;
+using ContohMVVM.Views;
+using Microsoft.Extensions.Logging;
 
 namespace ContohMVVM;
 
@@ -18,6 +21,10 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+		builder.Services.AddSingleton<MonkeyService>();
+		builder.Services.AddSingleton<MonkeyDetailsViewModel>();
+		builder.Services.AddSingleton<MonkeysView>();
 
 		return builder.Build();
 	}

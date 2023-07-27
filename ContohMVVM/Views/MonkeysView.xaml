@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContohMVVM.Views.MonkeysView"
+             Title="Monkeys View">
+         <Grid ColumnDefinitions="*,*" ColumnSpacing="5" RowDefinitions="*,Auto"
+          RowSpacing="0" Padding="10">
+        <CollectionView BackgroundColor="Transparent" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Monkeys}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125" Padding="5">
+                            <Grid Padding="0" ColumnDefinitions="125,*">
+                                <Image Aspect="AspectFill" Source="{Binding Image}"
+                                       WidthRequest="125"
+                                       HeightRequest="125" />
+                                <VerticalStackLayout Grid.Column="1" Padding="10" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" FontSize="Large" />
+                                    <Label Text="{Binding Location}" FontSize="Medium" />
+                               </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Get Monkeys" Command="{Binding GetMonkeysCommand}" IsEnabled="{Binding IsNotBusy}"
+                 Grid.Row="1" Margin="8"/>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+    </Grid>
+</ContentPage>
