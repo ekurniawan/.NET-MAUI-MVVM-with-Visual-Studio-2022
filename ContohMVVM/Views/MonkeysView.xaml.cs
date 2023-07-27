@@ -4,7 +4,7 @@ namespace ContohMVVM.Views;
 
 public partial class MonkeysView : ContentPage
 {
-	public MonkeysView(MonkeyDetailsViewModel viewModel)
+	public MonkeysView(MonkeysViewModel viewModel)
 	{
 		InitializeComponent();
 		BindingContext = viewModel;

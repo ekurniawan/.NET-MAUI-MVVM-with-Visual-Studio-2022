@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ContohMVVM.Views.MonkeysView"
-             Title="Monkeys View">
+             Title="{Binding Title}">
          <Grid ColumnDefinitions="*,*" ColumnSpacing="5" RowDefinitions="*,Auto"
           RowSpacing="0" Padding="10">
         <CollectionView BackgroundColor="Transparent" Grid.ColumnSpan="2"
@@ -27,7 +27,7 @@
         </CollectionView>
         <Button Text="Get Monkeys" Command="{Binding GetMonkeysCommand}" IsEnabled="{Binding IsNotBusy}"
                  Grid.Row="1" Margin="8"/>
-        <ActivityIndicator IsVisible="{Binding IsBusy}" HorizontalOptions="FillAndExpand"
-                           VerticalOptions="CenterAndExpand" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill" Color="DeepPink"
+                           VerticalOptions="Center" Grid.RowSpan="2" Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>

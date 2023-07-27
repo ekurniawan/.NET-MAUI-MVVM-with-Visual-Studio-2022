@@ -7,11 +7,11 @@ using ContohMVVM.Services;
 
 namespace ContohMVVM.ViewModels
 {
-	public partial class MonkeyDetailsViewModel : BaseViewModel
+	public partial class MonkeysViewModel : BaseViewModel
 	{
         private readonly MonkeyService monkeyService;
 		public ObservableCollection<Monkey> Monkeys { get; } = new();
-        public MonkeyDetailsViewModel(MonkeyService monkeyService)
+        public MonkeysViewModel(MonkeyService monkeyService)
 		{
 			Title = "Monkey Finder";
 			this.monkeyService = monkeyService;
