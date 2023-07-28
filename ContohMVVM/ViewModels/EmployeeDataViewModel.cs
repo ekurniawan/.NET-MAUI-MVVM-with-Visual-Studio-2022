@@ -8,7 +8,7 @@ namespace ContohMVVM.ViewModels
 	public class EmployeeDataViewModel : ObservableObject
 	{
 		readonly EmployeeData data;
-        public ObservableCollection<Employee> Monkeys { get => data.Employees; }
+        public ObservableCollection<Employee> Employees { get => data.Employees; }
         public EmployeeDataViewModel()
 		{
             data = new EmployeeData();

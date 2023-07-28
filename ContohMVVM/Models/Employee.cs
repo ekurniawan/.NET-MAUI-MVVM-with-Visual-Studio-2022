@@ -18,12 +18,8 @@ namespace ContohMVVM.Models
             set
             {
                 name = value;
-                if (Photo == null)
-                {
-                    resourceName = "ContohMVVM.Photos." + value.Replace(" ", "_") + ".jpg";
-                    if (!String.IsNullOrEmpty(resourceName))
-                        Photo = ImageSource.FromResource(resourceName);
-                }
+                if (Photo == null && !String.IsNullOrEmpty(name))
+                    Photo = ImageSource.FromFile(name.ToLower().Replace(" ", "_") + ".jpg");
             }
         }
 

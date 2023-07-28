@@ -50,12 +50,6 @@
 				<Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
 				<Setter Property="BarTextColor" Value="White" />
 			</Style>
-
-            <Style TargetType="Label" x:Key="BaseLabel">
-                <Setter Property="FontFamily" Value="OpenSansRegular" />
-                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelText},
-                        Dark={StaticResource LabelTextDark}}" />
-            </Style>
             
             <Style x:Key="ButtonOutline" TargetType="Button">
                 <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightBackground},

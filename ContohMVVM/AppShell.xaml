@@ -8,9 +8,9 @@
 
     
 
-    <FlyoutItem Title="Monkey" Icon="moon.png">
+    <FlyoutItem Title="Employee" Icon="moon.png">
         <ShellContent Title="Calc App" Icon="moon.png"
-                      ContentTemplate="{DataTemplate view:MonkeysView}" />
+                      ContentTemplate="{DataTemplate view:DxGridPage}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Customer" Icon="question.png">
