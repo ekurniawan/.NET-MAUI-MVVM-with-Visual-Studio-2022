@@ -41,22 +41,37 @@
 
        
 
+           <Style TargetType="Page" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor"
+                        Value="{AppThemeBinding Light={StaticResource LightBackground},
+                        Dark={StaticResource DarkBackground}}" />
+            </Style>
+
+			<Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
+				<Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+				<Setter Property="BarTextColor" Value="White" />
+			</Style>
+
+            <Style TargetType="Label" x:Key="BaseLabel">
+                <Setter Property="FontFamily" Value="OpenSansRegular" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelText},
+                        Dark={StaticResource LabelTextDark}}" />
+            </Style>
+            
             <Style x:Key="ButtonOutline" TargetType="Button">
-                <Setter Property="Background" Value="{StaticResource LightBackground}" />
-                <Setter Property="TextColor" Value="{StaticResource Primary}" />
-                <Setter Property="BorderColor" Value="{StaticResource Primary}" />
-                <Setter Property="BorderWidth" Value="2" />
-                <Setter Property="HeightRequest" Value="40" />
-                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightBackground},
+                        Dark={StaticResource DarkBackground}}"/>
+               
             </Style>
             <Style x:Key="CardView" TargetType="Frame">
-                <Setter Property="BorderColor" Value="#DDDDDD" />
-                <Setter Property="HasShadow" Value="{OnPlatform iOS=false, MacCatalyst=false, Default=true}" />
-                <Setter Property="Padding" Value="0" />
-                <Setter Property="Background" Value="{StaticResource LightBackground}" />
-                <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="IsClippedToBounds" Value="True"/>
+                <Setter Property="BorderColor" Value="#DDDDDD"/>
+                <Setter Property="HasShadow" Value="{OnPlatform iOS=false, MacCatalyst=false, Default=true}"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightBackground},
+                        Dark={StaticResource DarkBackground}}"/>
             </Style>
+
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
