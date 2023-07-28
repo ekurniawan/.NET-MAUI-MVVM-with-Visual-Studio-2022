@@ -13,9 +13,9 @@
                       ContentTemplate="{DataTemplate view:DxGridPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Customer" Icon="question.png">
-        <ShellContent Title="Customer"
-                      ContentTemplate="{DataTemplate view:CustomerView}" />
+    <FlyoutItem Title="Edit Form" Icon="question.png">
+        <ShellContent Title="Edit Customer"
+                      ContentTemplate="{DataTemplate view:DxEditorPage}" />
     </FlyoutItem>
 
 

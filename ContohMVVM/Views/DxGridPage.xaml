@@ -8,7 +8,7 @@
     <ContentPage.BindingContext>
         <local:EmployeeDataViewModel />
     </ContentPage.BindingContext>
-    <dxg:DataGridView ItemsSource="{Binding Employees}">
+    <dxg:DataGridView ItemsSource="{Binding Employees}" EditorShowMode="DoubleTap" AllowDragDropRows="True">
         <dxg:ImageColumn FieldName="Photo" Width="100" />
         <dxg:TemplateColumn FieldName="Name" Caption="Employee" MinWidth="200">
             <dxg:TemplateColumn.DisplayTemplate>
