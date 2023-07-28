@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ContohMVVM.Models;
 using ContohMVVM.Services;
@@ -13,6 +14,9 @@ namespace ContohMVVM.ViewModels
         private readonly MonkeyService monkeyService;
         private readonly IConnectivity connectivity;
         private readonly IGeolocation geolocation;
+
+		[ObservableProperty]
+		bool isRefreshing;
 
         public ObservableCollection<Monkey> Monkeys { get; } = new();
         public MonkeysViewModel(MonkeyService monkeyService,IConnectivity connectivity,
@@ -96,6 +100,7 @@ namespace ContohMVVM.ViewModels
 			finally
 			{
 				IsBusy = false;
+				IsRefreshing = false;
 			}
 		}
 

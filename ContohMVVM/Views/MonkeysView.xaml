@@ -6,8 +6,11 @@
              Title="{Binding Title}">
          <Grid ColumnDefinitions="*,*" ColumnSpacing="5" RowDefinitions="*,Auto"
           RowSpacing="0" Padding="10">
-        <CollectionView BackgroundColor="Transparent" Grid.ColumnSpan="2"
+        <RefreshView Grid.ColumnSpan="2" Command="{Binding GetMonkeysCommand}" IsRefreshing="{Binding IsRefreshing}">
+
+             <CollectionView BackgroundColor="Transparent" Grid.ColumnSpan="2"
                         ItemsSource="{Binding Monkeys}" SelectionMode="None">
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
@@ -31,6 +34,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        </RefreshView>
+       
         <Button Text="Get Monkeys" Command="{Binding GetMonkeysCommand}" IsEnabled="{Binding IsNotBusy}"
                  Grid.Row="1" Margin="8"/>
         <Button Text="Find Closest" Command="{Binding GetClosestMonkeyCommand}" IsEnabled="{Binding IsNotBusy}"
