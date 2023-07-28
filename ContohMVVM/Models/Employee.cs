@@ -20,7 +20,7 @@ namespace ContohMVVM.Models
                 name = value;
                 if (Photo == null)
                 {
-                    resourceName = "ContohMVVM.Images." + value.Replace(" ", "_") + ".jpg";
+                    resourceName = "ContohMVVM.Photos." + value.Replace(" ", "_") + ".jpg";
                     if (!String.IsNullOrEmpty(resourceName))
                         Photo = ImageSource.FromResource(resourceName);
                 }
