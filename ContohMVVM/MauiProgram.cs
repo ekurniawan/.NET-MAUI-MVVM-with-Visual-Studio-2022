@@ -3,6 +3,7 @@ using ContohMVVM.ViewModels;
 using ContohMVVM.Views;
 using Microsoft.Extensions.Logging;
 using DevExpress.Maui;
+using static Android.Provider.Contacts;
 
 namespace ContohMVVM;
 
@@ -24,7 +25,10 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<MonkeyService>();
+		// Add this code
+		string dbPath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "people.db3");
+        builder.Services.AddSingleton<PersonRepository>(s => ActivatorUtilities.CreateInstance<PersonRepository>(s, dbPath));
+        builder.Services.AddSingleton<MonkeyService>();
 		builder.Services.AddSingleton<MonkeysViewModel>();
 		builder.Services.AddSingleton<MonkeysView>();
 
