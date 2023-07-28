@@ -101,9 +101,11 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 	  <PackageReference Include="DevExpress.Maui.DataGrid" Version="23.1.4" />
 	  <PackageReference Include="DevExpress.Maui.Editors" Version="23.1.4" />
+	  <PackageReference Include="DevExpress.Maui.Charts" Version="23.1.4" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
 	  <PackageReference Include="DevExpress.Maui.DataGrid" Version="23.1.4" />
 	  <PackageReference Include="DevExpress.Maui.Editors" Version="23.1.4" />
+	  <PackageReference Include="DevExpress.Maui.Charts" Version="23.1.4" />
 	</ItemGroup>
 </Project>

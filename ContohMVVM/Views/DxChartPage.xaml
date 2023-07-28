@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContohMVVM.Views.DxChartPage"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+             xmlns:viewModel = "clr-namespace:ContohMVVM.ViewModels"
+             Title="DxChartPage">
+    <ContentPage.BindingContext>
+        <viewModel:GdpViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <dxc:ChartView>
+        <dxc:ChartView.Series>
+            <dxc:LineSeries DisplayName="{Binding GdpValueForUSA.CountryName}">
+                <dxc:LineSeries.Data>
+                    <dxc:SeriesDataAdapter DataSource="{Binding GdpValueForUSA.Values}"
+                                           ArgumentDataMember="Year">
+                        <dxc:ValueDataMember Type="Value" Member="Value" />
+                    </dxc:SeriesDataAdapter>
+                </dxc:LineSeries.Data>
+            </dxc:LineSeries>
+
+            <dxc:LineSeries DisplayName="{Binding GdpValueForChina.CountryName}">
+                <dxc:LineSeries.Data>
+                    <dxc:SeriesDataAdapter DataSource="{Binding GdpValueForChina.Values}"
+                                           ArgumentDataMember="Year">
+                        <dxc:ValueDataMember Type="Value" Member="Value"/>
+                    </dxc:SeriesDataAdapter>
+                </dxc:LineSeries.Data>
+            </dxc:LineSeries>
+
+             <dxc:LineSeries DisplayName="{Binding GdpValueForJapan.CountryName}">
+                <dxc:LineSeries.Data>
+                    <dxc:SeriesDataAdapter DataSource="{Binding GdpValueForJapan.Values}"
+                                           ArgumentDataMember="Year">
+                        <dxc:ValueDataMember Type="Value" Member="Value"/>
+                    </dxc:SeriesDataAdapter>
+                </dxc:LineSeries.Data>
+            </dxc:LineSeries>
+        </dxc:ChartView.Series>
+
+    </dxc:ChartView>
+</ContentPage>

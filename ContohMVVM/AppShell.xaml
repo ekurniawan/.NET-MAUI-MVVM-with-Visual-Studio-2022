@@ -13,6 +13,11 @@
                       ContentTemplate="{DataTemplate view:DxGridPage}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Chart" Icon="moon.png">
+        <ShellContent Title="GDP Chart" Icon="moon.png"
+                      ContentTemplate="{DataTemplate view:DxChartPage}" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Edit Form" Icon="question.png">
         <ShellContent Title="Edit Customer"
                       ContentTemplate="{DataTemplate view:DxEditorPage}" />
