@@ -32,8 +32,8 @@
                                        WidthRequest="125"
                                        HeightRequest="125" />
                                 <VerticalStackLayout Grid.Column="1" Padding="10" VerticalOptions="Center">
-                                    <Label Text="{Binding Name}" FontSize="Large" />
-                                    <Label Text="{Binding Location}" FontSize="Medium" />
+                                    <Label Text="{Binding Name}" Style="{StaticResource LargeLabel}" />
+                                    <Label Text="{Binding Location}" Style="{StaticResource MediumLabel}" />
                                </VerticalStackLayout>
                             </Grid>
                         </Frame>
@@ -47,7 +47,8 @@
                  Grid.Row="1" Margin="8"/>
         <Button Text="Find Closest" Command="{Binding GetClosestMonkeyCommand}" IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1" Grid.Column="1" Margin="8"/>
-        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill" Color="DeepPink"
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill"
+                           Color="{StaticResource Primary}"
                            VerticalOptions="Center" Grid.RowSpan="2" Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
