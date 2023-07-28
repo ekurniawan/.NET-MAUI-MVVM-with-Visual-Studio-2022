@@ -2,6 +2,7 @@
 using ContohMVVM.ViewModels;
 using ContohMVVM.Views;
 using Microsoft.Extensions.Logging;
+using DevExpress.Maui;
 
 namespace ContohMVVM;
 
@@ -11,6 +12,7 @@ public static class MauiProgram
 	{
 		var builder = MauiApp.CreateBuilder();
 		builder
+			.UseDevExpress()
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{

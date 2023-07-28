@@ -65,6 +65,16 @@
 	  <None Remove="Resources\Images\sun.png" />
 	  <None Remove="Resources\Images\starfield.png" />
 	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\nodata.png" />
+	  <None Remove="Photos\steven_buchanan.jpg" />
+	  <None Remove="Photos\anne_dodsworth.jpg" />
+	  <None Remove="Photos\andrew_fuller.jpg" />
+	  <None Remove="Photos\robert_king.jpg" />
+	  <None Remove="Photos\janet_leverling.jpg" />
+	  <None Remove="Photos\michael_suyama.jpg" />
+	  <None Remove="Photos\nancy_davolio.jpg" />
+	  <None Remove="Photos\laura_callahan.jpg" />
+	  <None Remove="Photos\margaret_peacock.jpg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
@@ -77,5 +87,21 @@
 	  <BundleResource Include="Resources\Images\comet.png" />
 	  <BundleResource Include="Resources\Images\sun.png" />
 	  <BundleResource Include="Resources\Images\starfield.png" />
+	  <BundleResource Include="Resources\Images\nodata.png" />
+	  <BundleResource Include="Photos\steven_buchanan.jpg" />
+	  <BundleResource Include="Photos\anne_dodsworth.jpg" />
+	  <BundleResource Include="Photos\andrew_fuller.jpg" />
+	  <BundleResource Include="Photos\robert_king.jpg" />
+	  <BundleResource Include="Photos\janet_leverling.jpg" />
+	  <BundleResource Include="Photos\michael_suyama.jpg" />
+	  <BundleResource Include="Photos\nancy_davolio.jpg" />
+	  <BundleResource Include="Photos\laura_callahan.jpg" />
+	  <BundleResource Include="Photos\margaret_peacock.jpg" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	  <PackageReference Include="DevExpress.Maui.DataGrid" Version="23.1.4" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+	  <PackageReference Include="DevExpress.Maui.DataGrid" Version="23.1.4" />
 	</ItemGroup>
 </Project>

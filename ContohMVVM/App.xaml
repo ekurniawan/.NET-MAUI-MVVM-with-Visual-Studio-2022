@@ -39,8 +39,6 @@
                 <Setter Property="FontSize" Value="20"/>
             </Style>
 
-       
-
            <Style TargetType="Page" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor"
                         Value="{AppThemeBinding Light={StaticResource LightBackground},
