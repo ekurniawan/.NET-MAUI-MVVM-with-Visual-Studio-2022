@@ -10,7 +10,14 @@
 
              <CollectionView BackgroundColor="Transparent" Grid.ColumnSpan="2"
                         ItemsSource="{Binding Monkeys}" SelectionMode="None">
-
+                <CollectionView.EmptyView>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="200" HeightRequest="200">
+                        <Image Source="nodata.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="{OnIdiom Default=1,Desktop=3}" />
+                </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
