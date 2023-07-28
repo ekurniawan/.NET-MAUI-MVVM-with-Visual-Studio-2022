@@ -21,7 +21,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">
-                        <Frame HeightRequest="125" Padding="5">
+                        <Frame HeightRequest="125" Padding="5" Style="{StaticResource CardView}">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MonkeysViewModel}},
@@ -44,9 +44,9 @@
         </RefreshView>
        
         <Button Text="Get Monkeys" Command="{Binding GetMonkeysCommand}" IsEnabled="{Binding IsNotBusy}"
-                 Grid.Row="1" Margin="8"/>
+                 Grid.Row="1" Margin="8" Style="{StaticResource ButtonOutline}" />
         <Button Text="Find Closest" Command="{Binding GetClosestMonkeyCommand}" IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="1" Grid.Column="1" Margin="8"/>
+                Grid.Row="1" Grid.Column="1" Margin="8" Style="{StaticResource ButtonOutline}"/>
         <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill"
                            Color="{StaticResource Primary}"
                            VerticalOptions="Center" Grid.RowSpan="2" Grid.ColumnSpan="2" />
